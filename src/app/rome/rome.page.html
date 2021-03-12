@@ -1,0 +1,147 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary" no-border>
+    <ion-buttons slot="start">
+      <ion-button>
+        <i class="material-icons" routerLink="/home" style="color: aliceblue;">arrow_back</i>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>
+      ROV
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <i class="material-icons" style="color: aliceblue;">add</i>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="banner">
+    <img src="../../assets/banner.svg" />
+
+    <div class="caption ion-padding">
+      Realm of Valor(ROV) <br>
+      Database
+    </div>
+
+    <div class="search">
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-icon slot="start" name="search-outline"></ion-icon>
+        <ion-input placeholder="Search Position"></ion-input>
+        <ion-button slot='end'>
+          <img src="../../assets/filter.svg" />
+        </ion-button>
+      </ion-item>
+    </div>
+  </div>
+
+  <div class="title" *ngFor="let item of r3">
+    <h2>การเล่นตำแหน่ง {{item.Role}}</h2>
+
+    <p>See all</p>
+  </div>
+
+  <div class="event-slider">
+    <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding">
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card routerLink="/jungle">
+            <ion-card-header class="ion-no-padding" *ngFor="let item of r3">
+              <img src={{item.Img}} width="185" height="185"/>
+            </ion-card-header>
+
+            <ion-card-content *ngFor="let item of r3">
+              <p class="date" >{{item.Title}}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card routerLink="/jungle">
+            <ion-card-header class="ion-no-padding" *ngFor="let item of r3">
+              <img src={{item.Img2}} width="185" height="185"/>
+            </ion-card-header>
+
+            <ion-card-content *ngFor="let item of r3">
+              <p class="date" >{{item.Title2}}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide><ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card routerLink="/jungle">
+            <ion-card-header class="ion-no-padding" *ngFor="let item of r3">
+              <img src={{item.Img3}} width="185" height="185"/>
+            </ion-card-header>
+
+            <ion-card-content *ngFor="let item of r3">
+              <p class="date" >{{item.Title3}}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card routerLink="/jungle">
+            <ion-card-header class="ion-no-padding" *ngFor="let item of r3">
+              <img src={{item.Img4}} width="185" height="185"/>
+            </ion-card-header>
+
+            <ion-card-content *ngFor="let item of r3">
+              <p class="date" >{{item.Title4}}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+      
+    </ion-slides>
+    
+  </div>
+  
+
+  <div class="default-top-padding title">
+    <h2>มาแรงช่วงนี้</h2>
+
+    <p>See all</p>
+  </div>
+
+  <div class="live-event">
+    <img src="https://i.pinimg.com/originals/48/21/a1/4821a11dbbce934425122409bf0ba5c3.png" width="178" height="178" />
+
+    <div class="info">
+      <div class="content">
+        <h6>เทคนิคการโยนขั้นสูง</h6>
+
+        <p class="stats">
+          <span><ion-icon name="eye"></ion-icon>&nbsp;2.3K</span><span><ion-icon name="heart"></ion-icon>&nbsp;3758</span>
+        </p>
+
+        <p class="location"><ion-icon name='location'></ion-icon>?, ?</p>
+
+        <div class="additional-info">
+          <div class="attendees">
+            <img src="../../assets/persons/person1.svg" />
+            <img src="../../assets/persons/person2.svg" />
+            <img src="../../assets/persons/person3.svg" />
+            <img src="../../assets/persons/person4.svg" />
+            <div class="count">
+              <img src="../../assets/persons/person-placeholder.svg" />
+
+              <p>+3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="indicator">
+        <div>เข้าชม</div>
+      </div>
+    </div>
+  </div>
+</ion-content>

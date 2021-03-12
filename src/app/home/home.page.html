@@ -1,18 +1,20 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary" no-border>
     <ion-buttons slot="start">
       <ion-button>
-        <img src="../../assets/menu.svg" />
+        <i class="material-icons" style="color: aliceblue;">arrow_back</i>
       </ion-button>
     </ion-buttons>
 
     <ion-title>
-      Event
+      ROV
     </ion-title>
 
     <ion-buttons slot="end">
       <ion-button>
-        <img src="../../assets/notification.svg" />
+        <i class="material-icons" style="color: aliceblue;">add</i>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -22,15 +24,15 @@
   <div class="banner">
     <img src="../../assets/banner.svg" />
 
-    <div class="caption ion-padding">
-      Join with <br>
-      upcoming events
+    <div class="caption ion-padding" *ngFor="let item of r3">
+      Realm of Valor(ROV) <br>
+      Database 
     </div>
 
     <div class="search">
       <ion-item lines="none" class="ion-no-padding">
         <ion-icon slot="start" name="search-outline"></ion-icon>
-        <ion-input placeholder="Search events"></ion-input>
+        <ion-input placeholder="Search Position"></ion-input>
         <ion-button slot='end'>
           <img src="../../assets/filter.svg" />
         </ion-button>
@@ -39,7 +41,7 @@
   </div>
 
   <div class="title">
-    <h2>Popular Events</h2>
+    <h2>เลือกตำแหน่งที่คุณสนใจ</h2>
 
     <p>See all</p>
   </div>
@@ -48,19 +50,19 @@
     <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding">
       <ion-slide>
         <ion-col class="ion-text-left">
-          <ion-card>
+          <ion-card routerLink="/jungle">
             <ion-card-header class="ion-no-padding">
-              <img src="../../assets/events/event1.svg" />
+              <img src="https://image.dek-d.com/27/0538/9374/124295526" width="185" height="185"/>
             </ion-card-header>
 
             <ion-card-content>
-              <p class="date">17th July, 2021</p>
-              <h2 class="eventname">International Jazz Festival</h2>
-              <p class="location"><ion-icon name="location"></ion-icon>Caracas, Venezuela</p>
+              <p class="date">Update 17th July, 2021</p>
+              <h2 class="eventname">jungle</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>ฟามเป็นหลัก, อาศัยอยู่แต่ในป่าเท่านั้น </p>
 
               <div class="additional-info">
                 <div class="attendees">
-                  <img src="../../assets/persons/person1.svg" />
+                  <img src="https://scontent.fubp1-1.fna.fbcdn.net/v/t1.0-9/124538499_3505227146226220_837162830603212386_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeEzWXJL10e5PB4DonLr6uSzF975WH2gASEX3vlYfaABISqj68URMlpyfc63mFsFIDHILUVJDQliDuj5hdoGR-Ev&_nc_ohc=Yb13jvvGonwAX-NUyJk&_nc_ht=scontent.fubp1-1.fna&oh=b713d3f3260a2a1ff0d3467608c55f73&oe=606B5533" />
                   <img src="../../assets/persons/person2.svg" />
                   <img src="../../assets/persons/person3.svg" />
                   <img src="../../assets/persons/person4.svg" />
@@ -71,7 +73,7 @@
                   </div>
                 </div>
 
-                <p class="time">10:00pm</p>
+                <p class="time">12 V.</p>
               </div>
             </ion-card-content>
           </ion-card>
@@ -79,15 +81,108 @@
       </ion-slide>
       <ion-slide>
         <ion-col class="ion-text-left">
-          <ion-card>
+          <ion-card routerLink="/carry">
             <ion-card-header class="ion-no-padding">
-              <img src="../../assets/events/event2.svg" />
+              <img src="https://i.pinimg.com/originals/ca/c9/30/cac93024a586d76752087d33a96c1c11.png" width="185" height="185"/>
             </ion-card-header>
 
             <ion-card-content>
-              <p class="date">23th July, 2021</p>
-              <h2 class="eventname">Contemporary Dance</h2>
-              <p class="location"><ion-icon name="location"></ion-icon>Caracas, Venezuela</p>
+              <p class="date">Update 20th July, 2021</p>
+              <h2 class="eventname">Carry</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>ดาเมจหลักของทีม</p>
+
+              <div class="additional-info">
+                <div class="attendees">
+                  <img src="https://scontent.fubp1-1.fna.fbcdn.net/v/t1.0-9/124538499_3505227146226220_837162830603212386_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeEzWXJL10e5PB4DonLr6uSzF975WH2gASEX3vlYfaABISqj68URMlpyfc63mFsFIDHILUVJDQliDuj5hdoGR-Ev&_nc_ohc=Yb13jvvGonwAX-NUyJk&_nc_ht=scontent.fubp1-1.fna&oh=b713d3f3260a2a1ff0d3467608c55f73&oe=606B5533" />
+                  <img src="../../assets/persons/person2.svg" />
+                  <img src="../../assets/persons/person3.svg" />
+                  <img src="../../assets/persons/person4.svg" />
+                  <div class="count">
+                    <img src="../../assets/persons/person-placeholder.svg" />
+
+                    <p>+7</p>
+                  </div>
+                </div>
+
+                <p class="time">23 V.</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card routerLink="/mage">
+            <ion-card-header class="ion-no-padding">
+              <img src="https://i.pinimg.com/564x/b8/95/7a/b8957a8c0562da72fb1f31efd66d0a29.jpg" width="185" height="185"/>
+            </ion-card-header>
+
+            <ion-card-content>
+              <p class="date">Update 22th July, 2021</p>
+              <h2 class="eventname">Mage</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>ดาเมจเวทหลักของทีม</p>
+
+              <div class="additional-info">
+                <div class="attendees">
+                  <img src="https://scontent.fubp1-1.fna.fbcdn.net/v/t1.0-9/124538499_3505227146226220_837162830603212386_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeEzWXJL10e5PB4DonLr6uSzF975WH2gASEX3vlYfaABISqj68URMlpyfc63mFsFIDHILUVJDQliDuj5hdoGR-Ev&_nc_ohc=Yb13jvvGonwAX-NUyJk&_nc_ht=scontent.fubp1-1.fna&oh=b713d3f3260a2a1ff0d3467608c55f73&oe=606B5533" />
+                  <img src="../../assets/persons/person2.svg" />
+                  <img src="../../assets/persons/person3.svg" />
+                  <img src="../../assets/persons/person4.svg" />
+                  <div class="count">
+                    <img src="../../assets/persons/person-placeholder.svg" />
+
+                    <p>+7</p>
+                  </div>
+                </div>
+
+                <p class="time">12 V.</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card routerLink="/offlane">
+            <ion-card-header class="ion-no-padding">
+              <img src="https://i.pinimg.com/564x/db/c8/fa/dbc8fa5b78e63a9df14a51ec743e75f2.jpg" width="185" height="185"/>
+            </ion-card-header>
+
+            <ion-card-content>
+              <p class="date">Update 25th July, 2021</p>
+              <h2 class="eventname">Offlane</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>ตัวสร้างโอกาศให้ทีม </p>
+
+              <div class="additional-info">
+                <div class="attendees">
+                  <img src="https://scontent.fubp1-1.fna.fbcdn.net/v/t1.0-9/124538499_3505227146226220_837162830603212386_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeEzWXJL10e5PB4DonLr6uSzF975WH2gASEX3vlYfaABISqj68URMlpyfc63mFsFIDHILUVJDQliDuj5hdoGR-Ev&_nc_ohc=Yb13jvvGonwAX-NUyJk&_nc_ht=scontent.fubp1-1.fna&oh=b713d3f3260a2a1ff0d3467608c55f73&oe=606B5533" />
+                  <img src="../../assets/persons/person2.svg" />
+                  <img src="../../assets/persons/person3.svg" />
+                  <img src="../../assets/persons/person4.svg" />
+                  <div class="count">
+                    <img src="../../assets/persons/person-placeholder.svg" />
+
+                    <p>+7</p>
+                  </div>
+                </div>
+
+                <p class="time">12 V.</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card routerLink="/rome">
+            <ion-card-header class="ion-no-padding">
+              <img src="https://c-sf.smule.com/rs-s80/arr/8a/a3/d043e95e-d5f9-423d-ab75-36f03688bc8c_512.jpg" />
+            </ion-card-header>
+
+            <ion-card-content>
+              <p class="date">Update 18th July, 2021</p>
+              <h2 class="eventname">Rome</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>วิ่งทั่วแมพ, แพะของทีม</p>
 
               <div class="additional-info">
                 <div class="attendees">
@@ -102,33 +197,35 @@
                   </div>
                 </div>
 
-                <p class="time">10:00pm</p>
+                <p class="time">7 V.</p>
               </div>
             </ion-card-content>
           </ion-card>
         </ion-col>
       </ion-slide>
     </ion-slides>
+    
   </div>
+  
 
   <div class="default-top-padding title">
-    <h2>Live right now</h2>
+    <h2>มาแรงช่วงนี้</h2>
 
     <p>See all</p>
   </div>
 
   <div class="live-event">
-    <img src="../../assets/events/event3.svg" />
+    <img src="https://i.pinimg.com/originals/48/21/a1/4821a11dbbce934425122409bf0ba5c3.png" width="178" height="178" />
 
     <div class="info">
       <div class="content">
-        <h6>World Art Day</h6>
+        <h6>เทคนิคการโยนขั้นสูง</h6>
 
         <p class="stats">
           <span><ion-icon name="eye"></ion-icon>&nbsp;2.3K</span><span><ion-icon name="heart"></ion-icon>&nbsp;3758</span>
         </p>
 
-        <p class="location"><ion-icon name='location'></ion-icon>Caracas, Venezuela</p>
+        <p class="location"><ion-icon name='location'></ion-icon>?, ?</p>
 
         <div class="additional-info">
           <div class="attendees">
@@ -146,7 +243,7 @@
       </div>
 
       <div class="indicator">
-        <div>Live</div>
+        <div>เข้าชม</div>
       </div>
     </div>
   </div>
