@@ -1,4 +1,4 @@
-
+<!-- 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary" no-border>
@@ -41,12 +41,12 @@
   </div>
 
   <div class="title" *ngFor="let item of r3">
-    <h2>การเล่นตำแหน่ง {{item.Role}}</h2>
+    
 
     <p>See all</p>
   </div>
 
-  <div class="event-slider">
+  <!-- <div class="event-slider">
     <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding">
       <ion-slide>
         <ion-col class="ion-text-left">
@@ -100,15 +100,15 @@
         </ion-col>
       </ion-slide>
       
-    </ion-slides>
+    </ion-slides> -->
     
-  </div>
-  <div class="title"><h2>Comment คำแนะนำจากผู้เล่นคนอื่น</h2></div>
+  <!-- </div> -->
+  <div class="title"><h2>ยินดีต้อนรับเข้าสู่กลุ่มพูดคุย</h2></div>
   
   <div class="title" *ngFor="let item of r5">
     
     
-    <p style="color: black; font-size: 15px;">Position: {{item.Role}}</p>
+    
     <br>
     <p style="color: black; font-size: 15px;">{{item.comment}}</p>
     <button (click)="updateData(item)">Update</button>

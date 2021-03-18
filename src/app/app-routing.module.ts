@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
   {
     path: 'home',
@@ -51,6 +52,15 @@ const routes: Routes = [
     path: 'edit/:d1',
     loadChildren: () => import('./edit/edit.module').then( m => m.EditPageModule)
   },
+  {
+    path: 'throw',
+    loadChildren: () => import('./throw/throw.module').then( m => m.ThrowPageModule)
+  },  {
+    path: 'commu',
+    loadChildren: () => import('./commu/commu.module').then( m => m.CommuPageModule)
+  },
+
+
 
   
 
