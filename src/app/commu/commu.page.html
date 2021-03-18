@@ -1,4 +1,4 @@
-<!-- 
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary" no-border>
@@ -26,16 +26,16 @@
 
     <div class="caption ion-padding">
       Realm of Valor(ROV) <br>
-      Database
+      Communication
     </div>
 
     <div class="search">
       <ion-item lines="none" class="ion-no-padding">
         <ion-icon slot="start" name="search-outline"></ion-icon>
-        <ion-input placeholder="Search Position"></ion-input>
-        <ion-button slot='end'>
-          <img src="../../assets/filter.svg" />
-        </ion-button>
+        <ion-input  placeholder="พูดอะไรสักอย่างสิ" [(ngModel)]="g1"></ion-input>
+        <button (click)="sendG1()">Submit</button>
+          
+        
       </ion-item>
     </div>
   </div>
@@ -104,18 +104,56 @@
     
   <!-- </div> -->
   <div class="title"><h2>ยินดีต้อนรับเข้าสู่กลุ่มพูดคุย</h2></div>
+  <ion-card *ngFor="let item of r5">
+    <ion-item >
+      <ion-avatar slot="start">
+        <img src="https://scontent.fubp1-1.fna.fbcdn.net/v/t1.0-9/156388550_1174804212977023_2041124519245458723_o.jpg?_nc_cat=110&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeHezmtO4R-RCvQQtDDY_CG5THm7c1u46IdMebtzW7joh0aU39VeZ60-2U0KV_eCkCdURYvNMvAKzztTd4-zl1pk&_nc_ohc=Vc6nr_wykSIAX_JDLt4&_nc_ht=scontent.fubp1-1.fna&oh=20bd2a3b9e986dfeb84a7a5ec6b66f3a&oe=6077A49E">
+      </ion-avatar>
+      <ion-label>
+        <h3>{{item.name}}</h3>
+        <p>jan 10, 2021</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button (click)="openAS(item)">
+          <ion-icon name="ellipsis-vertical-outline" style="color: black;"></ion-icon>
+          
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
   
-  <div class="title" *ngFor="let item of r5">
-    
-    
-    
-    <br>
-    <p style="color: black; font-size: 15px;">{{item.comment}}</p>
-    <button (click)="updateData(item)">Update</button>
-    <button (click)="delData(item)">DEL</button>
-
-    
-  </div>
+    <img src="https://f.ptcdn.info/651/069/000/qbb0xy1zrcMQywxJ0rML-o.jpg" alt="ion">
+    <ion-card-header>
+      <ion-card-title style="font-size: 20px;">{{item.Postname}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{item.comment}}</p>
+    </ion-card-content>
+  
+    <ion-footer>
+      <ion-row>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>1.5k Likes</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="text"></ion-icon>
+            <div>4 Comments</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="time"></ion-icon>
+            <div>11h ago</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-footer>
+  </ion-card>
+  
+ 
 
   <div class="default-top-padding title">
     <h2>มาแรงช่วงนี้</h2>
@@ -156,4 +194,11 @@
       </div>
     </div>
   </div>
+
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+  </style>
 </ion-content>

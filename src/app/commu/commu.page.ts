@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { crudapi } from '../CRUD/crudapi';
 import { jungleC } from '../commentCRUD/JuggleC';
 import { Router } from '@angular/router';
+import { ActionSheetController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-commu',
@@ -9,10 +12,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./commu.page.scss'],
 })
 export class CommuPage implements OnInit {
+
+  g1: any;
+  
+ 
   r3: any;
   r5: any;
-  constructor(private getcrud: crudapi, private getcrud2: jungleC,private route:Router) { }
+  constructor(private getcrud: crudapi, private getcrud2: jungleC, private route: Router,public actionSheetController: ActionSheetController,public alertController: AlertController) { }
   ngOnInit() {
+
     this.getcrud.readData().subscribe(data => {
       this.r3 = data.map(e => {
         return {
@@ -36,7 +44,8 @@ export class CommuPage implements OnInit {
           id: e.payload.doc.id,
           Role: e.payload.doc.data()['Role'.toString()],
           comment: e.payload.doc.data()['Comment'.toString()],
-          name: e.payload.doc.data()['Username'.toString()],
+          name: e.payload.doc.data()['Name'.toString()],
+          Postname: e.payload.doc.data()['PostName'.toString()],
 
         }
       })
@@ -46,14 +55,103 @@ export class CommuPage implements OnInit {
   }
   updateData(item: any) {
     //  this.getcrud2.updateData(item);
-      const d1 = JSON.stringify(item)
-      this.route.navigate(['edit',d1])
+    const d1 = JSON.stringify(item)
+    this.route.navigate(['edit', d1])
 
-      // Other info you want to add here
-    
+    // Other info you want to add here
+
 
   }
   delData(item: any) {
-     this.getcrud2.delData(item);
+    this.getcrud2.delData(item);
+  }
+  async openAS(item) {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'เลือกหัวข้อ',
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          
+          this.presentAlertConfirm(item);
+          
+        }
+        
+      }, {
+        text: 'EditData',
+        icon: 'share',
+        handler: () => {
+          this.presentAlertConfirm2(item);
+        }
+      }, 
+      {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+        
+      }]
+    });
+    await actionSheet.present();
+  }
+  sendG1(){
+    console.log(this.g1);
+    this.route.navigate(['comment-add',this.g1])
+    
+  }
+  async presentAlertConfirm(item) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Confirm!',
+      message: 'ยืนยันการลบโพสต์หรือไม่?',
+      buttons: [
+        {
+          text: 'ยกเลิก',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'ยอมรับ',
+          handler: () => {
+            console.log('Confirm Okay');
+            this.delData(item);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+  async presentAlertConfirm2(item) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Confirm!',
+      message: 'ยืนยันการแก้ไขโพสต์หรือไม่?',
+      buttons: [
+        {
+          text: 'ยกเลิก',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'ยอมรับ',
+          handler: () => {
+            console.log('Confirm Okay');
+            this.updateData(item);
+            
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 };

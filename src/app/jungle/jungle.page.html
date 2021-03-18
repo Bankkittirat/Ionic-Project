@@ -103,9 +103,30 @@
     </ion-slides>
     
   </div>
+
   <div class="title"><h2>Comment คำแนะนำจากผู้เล่นคนอื่น</h2></div>
-  
-  <div class="title" *ngFor="let item of r5">
+  <div class="event-slider" *ngFor="let item of r5">
+    <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding">
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card>
+            <ion-card-header class="ion-no-padding">
+              <img src="https://www.gamingdose.com/wp-content/uploads/2020/10/AoV-Ultraman.jpg" width="185" height="185"/>
+            </ion-card-header>
+            <ion-card-content>
+              <p class="date" >{{item.comment}}</p>
+              <button (click)="updateData(item)">Update</button > 
+              <button (click)="delData(item)">DEL</button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+            
+          </ion-slide>
+    </ion-slides>
+    
+  </div>
+  <!-- <div class="title" *ngFor="let item of r5">
     
     
     <p style="color: black; font-size: 15px;">Position: {{item.Role}}</p>
@@ -115,7 +136,7 @@
     <button (click)="delData(item)">DEL</button>
 
     
-  </div>
+  </div> -->
 
   <div class="default-top-padding title">
     <h2>มาแรงช่วงนี้</h2>

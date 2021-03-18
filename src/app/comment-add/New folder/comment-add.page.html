@@ -1,7 +1,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary" no-border>
-    <ion-buttons slot="start" routerLink="/home">
+    <ion-buttons slot="start">
       <ion-button>
         <i class="material-icons" style="color: aliceblue;">arrow_back</i>
       </ion-button>
@@ -39,7 +39,7 @@
       <ion-label position="floating">name</ion-label>
       <ion-textarea [(ngModel)]="todo.Name" name="Name"></ion-textarea>
     </ion-item><br>
-    <ion-button expand="block" type="submit" color="light" (click)="presentAlertConfirm2()">SUBMIT</ion-button>
+    <ion-button expand="block" type="submit" color="light">SUBMIT</ion-button>
   </form>
 
   <!-- <form id = "form">

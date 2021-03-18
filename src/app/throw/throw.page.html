@@ -1,10 +1,9 @@
-
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary" no-border>
     <ion-buttons slot="start">
-      <ion-button>
-        <i class="material-icons" routerLink="/home" style="color: aliceblue;">arrow_back</i>
+      <ion-button routerLink="/home">
+        <i class="material-icons" style="color: aliceblue;">arrow_back</i>
       </ion-button>
     </ion-buttons>
 
@@ -14,7 +13,7 @@
 
     <ion-buttons slot="end">
       <ion-button>
-        <i class="material-icons" routerLink="/comment-add" style="color: aliceblue;">add</i>
+        <i class="material-icons" style="color: aliceblue;">add</i>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -24,7 +23,7 @@
   <div class="banner">
     <img src="../../assets/banner.svg" />
 
-    <div class="caption ion-padding">
+    <div class="caption ion-padding" >
       Realm of Valor(ROV) <br>
       Database
     </div>
@@ -32,16 +31,16 @@
     <div class="search">
       <ion-item lines="none" class="ion-no-padding">
         <ion-icon slot="start" name="search-outline"></ion-icon>
-        <ion-input placeholder="Search Position"></ion-input>
-        <ion-button slot='end'>
+        <ion-input placeholder="Search "></ion-input>
+        <!-- <ion-button slot='end'>
           <img src="../../assets/filter.svg" />
-        </ion-button>
+        </ion-button> -->
       </ion-item>
     </div>
   </div>
 
-  <div class="title" *ngFor="let item of r3">
-    <h2>การเล่นตำแหน่ง {{item.Role}}</h2>
+  <div class="title">
+    <h2>ฝึกวิชาการโยนกับปรมจารย์</h2>
 
     <p>See all</p>
   </div>
@@ -50,72 +49,163 @@
     <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding">
       <ion-slide>
         <ion-col class="ion-text-left">
-          <ion-card routerLink="/jungle">
-            <ion-card-header class="ion-no-padding" *ngFor="let item of r3">
-              <img src={{item.Img}} width="185" height="185"/>
+          <ion-card >
+            <ion-card-header class="ion-no-padding">
+              <iframe width="100%" height="185" [src]="vidUrl" frameborder="0" allowfullscreen></iframe>
             </ion-card-header>
 
-            <ion-card-content *ngFor="let item of r3">
-              <p class="date" >{{item.Title}}</p>
+            <ion-card-content>
+              <p class="date">Update 17th July, 2021</p>
+              <h2 class="eventname">ปราณโยนรูปแบบที่ 1</h2>
+              <p class="location">ดูไว้ครับน้อนๆ พี่มันเมพ</p>
+
+              <div class="additional-info">
+                <div class="attendees">
+                  <img src="https://scontent.fubp1-1.fna.fbcdn.net/v/t1.0-9/124538499_3505227146226220_837162830603212386_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeEzWXJL10e5PB4DonLr6uSzF975WH2gASEX3vlYfaABISqj68URMlpyfc63mFsFIDHILUVJDQliDuj5hdoGR-Ev&_nc_ohc=Yb13jvvGonwAX-NUyJk&_nc_ht=scontent.fubp1-1.fna&oh=b713d3f3260a2a1ff0d3467608c55f73&oe=606B5533" />
+                  <img src="../../assets/persons/person2.svg" />
+                  <img src="../../assets/persons/person3.svg" />
+                  <img src="../../assets/persons/person4.svg" />
+                  <div class="count">
+                    <img src="../../assets/persons/person-placeholder.svg" />
+
+                    <p>+90</p>
+                  </div>
+                </div>
+
+                <p class="time"><ion-icon name="eye"></ion-icon>2.3M</p>
+              </div>
             </ion-card-content>
           </ion-card>
         </ion-col>
       </ion-slide>
       <ion-slide>
         <ion-col class="ion-text-left">
-          <ion-card routerLink="/jungle">
-            <ion-card-header class="ion-no-padding" *ngFor="let item of r3">
-              <img src={{item.Img2}} width="185" height="185"/>
+          <ion-card >
+            <ion-card-header class="ion-no-padding">
+              <iframe width="100%" height="185" [src]="vidUrl2" frameborder="0" allowfullscreen></iframe>
             </ion-card-header>
 
-            <ion-card-content *ngFor="let item of r3">
-              <p class="date" >{{item.Title2}}</p>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-slide><ion-slide>
-        <ion-col class="ion-text-left">
-          <ion-card routerLink="/jungle">
-            <ion-card-header class="ion-no-padding" *ngFor="let item of r3">
-              <img src={{item.Img3}} width="185" height="185"/>
-            </ion-card-header>
+            <ion-card-content>
+              <p class="date">Update 20th July, 2021</p>
+              <h2 class="eventname">ปราณโยนรูปแบบที่ 2</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>ยืนเฉยๆ ให้เพื่อนแบก ก็พอแล้ว</p>
 
-            <ion-card-content *ngFor="let item of r3">
-              <p class="date" >{{item.Title3}}</p>
+              <div class="additional-info">
+                <div class="attendees">
+                  <img src="https://scontent.fubp1-1.fna.fbcdn.net/v/t1.0-9/124538499_3505227146226220_837162830603212386_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeEzWXJL10e5PB4DonLr6uSzF975WH2gASEX3vlYfaABISqj68URMlpyfc63mFsFIDHILUVJDQliDuj5hdoGR-Ev&_nc_ohc=Yb13jvvGonwAX-NUyJk&_nc_ht=scontent.fubp1-1.fna&oh=b713d3f3260a2a1ff0d3467608c55f73&oe=606B5533" />
+                  <img src="../../assets/persons/person2.svg" />
+                  <img src="../../assets/persons/person3.svg" />
+                  <img src="../../assets/persons/person4.svg" />
+                  <div class="count">
+                    <img src="../../assets/persons/person-placeholder.svg" />
+
+                    <p>+84</p>
+                  </div>
+                </div>
+
+                <p class="time"><ion-icon name="eye"></ion-icon>954K</p>
+              </div>
             </ion-card-content>
           </ion-card>
         </ion-col>
       </ion-slide>
       <ion-slide>
         <ion-col class="ion-text-left">
-          <ion-card routerLink="/jungle">
-            <ion-card-header class="ion-no-padding" *ngFor="let item of r3">
-              <img src={{item.Img4}} width="185" height="185"/>
+          <ion-card >
+            <ion-card-header class="ion-no-padding">
+              <iframe width="100%" height="185" [src]="vidUrl3" frameborder="0" allowfullscreen></iframe>
             </ion-card-header>
 
-            <ion-card-content *ngFor="let item of r3">
-              <p class="date" >{{item.Title4}}</p>
+            <ion-card-content>
+              <p class="date">Update 22th July, 2021</p>
+              <h2 class="eventname">ปราณโยนรูปแบบที่ 3</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>คอยลาสบัฟเพื่อน</p>
+
+              <div class="additional-info">
+                <div class="attendees">
+                  <img src="https://scontent.fubp1-1.fna.fbcdn.net/v/t1.0-9/124538499_3505227146226220_837162830603212386_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeEzWXJL10e5PB4DonLr6uSzF975WH2gASEX3vlYfaABISqj68URMlpyfc63mFsFIDHILUVJDQliDuj5hdoGR-Ev&_nc_ohc=Yb13jvvGonwAX-NUyJk&_nc_ht=scontent.fubp1-1.fna&oh=b713d3f3260a2a1ff0d3467608c55f73&oe=606B5533" />
+                  <img src="../../assets/persons/person2.svg" />
+                  <img src="../../assets/persons/person3.svg" />
+                  <img src="../../assets/persons/person4.svg" />
+                  <div class="count">
+                    <img src="../../assets/persons/person-placeholder.svg" />
+
+                    <p>+222</p>
+                  </div>
+                </div>
+
+                <p class="time"><ion-icon name="eye"></ion-icon>1.2M</p>
+              </div>
             </ion-card-content>
           </ion-card>
         </ion-col>
       </ion-slide>
-      
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card >
+            <ion-card-header class="ion-no-padding">
+              <iframe width="100%" height="185" [src]="vidUrl4" frameborder="0" allowfullscreen></iframe>
+            </ion-card-header>
+
+            <ion-card-content>
+              <p class="date">Update 25th July, 2021</p>
+              <h2 class="eventname">ปราณโยนรูปแบบที่ 4</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>เดินไปแจกในบ่อเท่ แล้วก็รอกดคอน</p>
+
+              <div class="additional-info">
+                <div class="attendees">
+                  <img src="https://scontent.fubp1-1.fna.fbcdn.net/v/t1.0-9/124538499_3505227146226220_837162830603212386_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeEzWXJL10e5PB4DonLr6uSzF975WH2gASEX3vlYfaABISqj68URMlpyfc63mFsFIDHILUVJDQliDuj5hdoGR-Ev&_nc_ohc=Yb13jvvGonwAX-NUyJk&_nc_ht=scontent.fubp1-1.fna&oh=b713d3f3260a2a1ff0d3467608c55f73&oe=606B5533" />
+                  <img src="../../assets/persons/person2.svg" />
+                  <img src="../../assets/persons/person3.svg" />
+                  <img src="../../assets/persons/person4.svg" />
+                  <div class="count">
+                    <img src="../../assets/persons/person-placeholder.svg" />
+
+                    <p>+35</p>
+                  </div>
+                </div>
+
+                <p class="time"><ion-icon name="eye"></ion-icon>887K</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card >
+            <ion-card-header class="ion-no-padding">
+              <iframe width="100%" height="185" [src]="vidUrl5" frameborder="0" allowfullscreen></iframe>
+            </ion-card-header>
+
+            <ion-card-content>
+              <p class="date">Update 18th July, 2021</p>
+              <h2 class="eventname">ปราณโยนรูปแบบที่ 5</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>ยืนแช่เลน ไม่ทำอะไรเลยยยย</p>
+
+              <div class="additional-info">
+                <div class="attendees">
+                  <img src="../../assets/persons/person1.svg" />
+                  <img src="../../assets/persons/person2.svg" />
+                  <img src="../../assets/persons/person3.svg" />
+                  <img src="../../assets/persons/person4.svg" />
+                  <div class="count">
+                    <img src="../../assets/persons/person-placeholder.svg" />
+
+                    <p>+68</p>
+                  </div>
+                </div>
+
+                <p class="time"><ion-icon name="eye"></ion-icon>364K</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
     </ion-slides>
-    
-  </div>
-  <div class="title"><h2>Comment</h2></div>
-  
-  <div class="title" *ngFor="let item of r5">
-    
-    
-    <p style="color: black; font-size: 15px;">Position: {{item.Role}}</p>
-    <br>
-    <p style="color: black; font-size: 15px;">{{item.comment}}</p>
-    <button (click)="updateData(item)">Update</button>
-    <button (click)="delData(item)">DEL</button>
 
-    
   </div>
+
 
   <div class="default-top-padding title">
     <h2>มาแรงช่วงนี้</h2>
@@ -123,7 +213,7 @@
     <p>See all</p>
   </div>
 
-  <div class="live-event">
+  <!-- <div class="live-event">
     <img src="https://i.pinimg.com/originals/48/21/a1/4821a11dbbce934425122409bf0ba5c3.png" width="178" height="178" />
 
     <div class="info">
@@ -152,145 +242,21 @@
       </div>
 
       <div class="indicator">
-        <div>เข้าชม</div>
+        <div routerLink="/throw">เข้าชม</div>
       </div>
     </div>
-  </div>
-</ion-content>
 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<ion-header class="ion-no-border">
-  <ion-toolbar color="primary" no-border>
-    <ion-buttons slot="start">
-      <ion-button>
-        <i class="material-icons" routerLink="/home" style="color: aliceblue;">arrow_back</i>
-      </ion-button>
-    </ion-buttons>
-
-    <ion-title>
-      ROV
-    </ion-title>
-
-    <ion-buttons slot="end">
-      <ion-button>
-        <i class="material-icons" routerLink="/comment-add" style="color: aliceblue;">add</i>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <div class="banner">
-    <img src="../../assets/banner.svg" />
-
-    <div class="caption ion-padding">
-      Realm of Valor(ROV) <br>
-      Database
-    </div>
-
-    <div class="search">
-      <ion-item lines="none" class="ion-no-padding">
-        <ion-icon slot="start" name="search-outline"></ion-icon>
-        <ion-input placeholder="Search Position"></ion-input>
-        <ion-button slot='end'>
-          <img src="../../assets/filter.svg" />
-        </ion-button>
-      </ion-item>
-    </div>
-  </div>
-
-  <div class="title" *ngFor="let item of r3">
-    <h2>การเล่นตำแหน่ง {{item.Role}}</h2>
-
-    <p>See all</p>
-  </div>
-
-  <div class="event-slider">
-    <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding">
-      <ion-slide>
-        <ion-col class="ion-text-left">
-          <ion-card routerLink="/jungle">
-            <ion-card-header class="ion-no-padding" *ngFor="let item of r3">
-              <img src={{item.Img}} width="185" height="185"/>
-            </ion-card-header>
-
-            <ion-card-content *ngFor="let item of r3">
-              <p class="date" >{{item.Title}}</p>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-slide>
-      <ion-slide>
-        <ion-col class="ion-text-left">
-          <ion-card routerLink="/jungle">
-            <ion-card-header class="ion-no-padding" *ngFor="let item of r3">
-              <img src={{item.Img2}} width="185" height="185"/>
-            </ion-card-header>
-
-            <ion-card-content *ngFor="let item of r3">
-              <p class="date" >{{item.Title2}}</p>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-slide><ion-slide>
-        <ion-col class="ion-text-left">
-          <ion-card routerLink="/jungle">
-            <ion-card-header class="ion-no-padding" *ngFor="let item of r3">
-              <img src={{item.Img3}} width="185" height="185"/>
-            </ion-card-header>
-
-            <ion-card-content *ngFor="let item of r3">
-              <p class="date" >{{item.Title3}}</p>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-slide>
-      <ion-slide>
-        <ion-col class="ion-text-left">
-          <ion-card routerLink="/jungle">
-            <ion-card-header class="ion-no-padding" *ngFor="let item of r3">
-              <img src={{item.Img4}} width="185" height="185"/>
-            </ion-card-header>
-
-            <ion-card-content *ngFor="let item of r3">
-              <p class="date" >{{item.Title4}}</p>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-slide>
-      
-    </ion-slides>
-    
-  </div>
-  <div class="title"><h2>Comment</h2></div>
-  
-  <div class="title" *ngFor="let item of r5">
-    
-    
-    <p style="color: black; font-size: 15px;">Position: {{item.Role}}</p>
-    <br>
-    <p style="color: black; font-size: 15px;">{{item.comment}}</p>
-    <button (click)="updateData(item)">Update</button>
-    <button (click)="delData(item)">DEL</button>
-
-    
-  </div>
-
-  <div class="default-top-padding title">
-    <h2>มาแรงช่วงนี้</h2>
-
-    <p>See all</p>
-  </div>
+  </div> -->
 
   <div class="live-event">
-    <img src="https://i.pinimg.com/originals/48/21/a1/4821a11dbbce934425122409bf0ba5c3.png" width="178" height="178" />
+    <img src="https://pbs.twimg.com/media/DTQe0DcVMAAytqr.jpg:large" width="150" height="178" />
 
     <div class="info">
       <div class="content">
-        <h6>เทคนิคการโยนขั้นสูง</h6>
+        <h6>เข้าร่วมกลุ่มพูดคุยที่นี่</h6>
 
         <p class="stats">
-          <span><ion-icon name="eye"></ion-icon>&nbsp;2.3K</span><span><ion-icon name="heart"></ion-icon>&nbsp;3758</span>
+          <span><ion-icon name="eye"></ion-icon>&nbsp;สมาชิก 2.3K</span><span><ion-icon name="heart"></ion-icon>&nbsp;3758</span>
         </p>
 
         <p class="location"><ion-icon name='location'></ion-icon>?, ?</p>
@@ -311,8 +277,9 @@
       </div>
 
       <div class="indicator">
-        <div>เข้าชม</div>
+        <div routerLink="/commu">เข้าร่วม</div>
       </div>
     </div>
+
   </div>
 </ion-content>

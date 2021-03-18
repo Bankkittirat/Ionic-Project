@@ -1,31 +1,27 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <ion-header class="ion-no-border">
-  
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button color="primary">
-        <ion-icon slot="icon-only" name="arrow-back" routerLink="/home"></ion-icon>
+  <ion-toolbar color="primary" no-border>
+    <ion-buttons slot="start" routerLink="/home">
+      <ion-button>
+        <i class="material-icons" style="color: aliceblue;">arrow_back</i>
       </ion-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button>Comment</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content >
   <h1>Update <br />Here!!</h1>
   <form (ngSubmit)="Send()" id = "form">
     <ion-item>
-      <ion-label>PostName</ion-label>
+      <ion-label position="floating">PostName</ion-label>
       <ion-textarea [(ngModel)]="todo.PostName" name="PostName"></ion-textarea>
     </ion-item><br>
     <ion-item>
-      <ion-label>Password For Edit</ion-label>
+      <ion-label position="floating">Password For Edit</ion-label>
       <ion-textarea [(ngModel)]="todo.Password" name="Password"></ion-textarea>
     </ion-item><br>
     <ion-item>
-      <ion-label>Role</ion-label>
+      <ion-label position="floating">Role</ion-label>
       <!-- <ion-input type="Role" [(ngModel)]="todo.Role" name="Role"></ion-input> -->
       <ion-select type="Role" [(ngModel)]="todo.Role" name="Role">
         <ion-select-option value="Juggle">jungle</ion-select-option>
@@ -36,14 +32,14 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>Comment</ion-label>
+      <ion-label position="floating">Comment</ion-label>
       <ion-textarea [(ngModel)]="todo.Comment" name="Comment"></ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-label>name</ion-label>
+      <ion-label position="floating">name</ion-label>
       <ion-textarea [(ngModel)]="todo.Name" name="Name"></ion-textarea>
     </ion-item><br>
-    <button ion-button type="submit" block>SUBMIT</button>
+    <ion-button expand="block" type="submit" color="light" (click)="presentAlertConfirm2()">SUBMIT</ion-button>
   </form>
 
   <!-- <form id = "form">
@@ -60,10 +56,10 @@
     </ion-select>
     <ion-button (click)="Send()" expand="block" shape="round">Comment</ion-button>
      -->
-    
 
 
-  
 
-  <p>กรุณากรอกข้อมูลให้ครบถถ้วน<br /></p>
+
+
+  <p>กรุณากรอกข้อมูลให้ครบถ้วน<br />our terms & conditions.</p>
 </ion-content>

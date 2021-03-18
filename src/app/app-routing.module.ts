@@ -45,7 +45,13 @@ const routes: Routes = [
     loadChildren: () => import('./rome/rome.module').then( m => m.RomePageModule)
   },
   {
+    path: 'comment-add/:g1',
+    
+    loadChildren: () => import('./comment-add/comment-add.module').then( m => m.CommentAddPageModule)
+  },
+  {
     path: 'comment-add',
+    
     loadChildren: () => import('./comment-add/comment-add.module').then( m => m.CommentAddPageModule)
   },
   {
@@ -55,7 +61,8 @@ const routes: Routes = [
   {
     path: 'throw',
     loadChildren: () => import('./throw/throw.module').then( m => m.ThrowPageModule)
-  },  {
+  },
+  {
     path: 'commu',
     loadChildren: () => import('./commu/commu.module').then( m => m.CommuPageModule)
   },
